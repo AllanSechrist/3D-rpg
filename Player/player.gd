@@ -14,10 +14,12 @@ var _attack_direction := Vector3.ZERO
 @export var max_boundary: float = 10
 @export var animation_decay := 20.0
 @export var attack_move_speed: float = 3.0
+
 @onready var horizontal_pivot: Node3D = $HorizontalPivot
 @onready var vertical_pivot: Node3D = $HorizontalPivot/VerticalPivot
 @onready var rig_pivot: Node3D = $RigPivot
 @onready var rig: Node3D = $RigPivot/Rig
+@onready var attack_cast: RayCast3D = %AttackCast
 
 
 func _ready() -> void:
@@ -74,6 +76,7 @@ func slash_attack() -> void:
 	_attack_direction = get_movement_direction()
 	if _attack_direction.is_zero_approx():
 		_attack_direction = rig.global_basis * Vector3(0, 0, 1)
+	attack_cast.clear_exceptions()
 		
 func handle_slashing_physics_frame(delta: float) -> void:
 	if not rig.is_slashing():
@@ -81,6 +84,7 @@ func handle_slashing_physics_frame(delta: float) -> void:
 	velocity.x = _attack_direction.x * attack_move_speed
 	velocity.z = _attack_direction.z * attack_move_speed
 	look_toward_direction(_attack_direction, delta)
+	attack_cast.deal_damage()
 	
 func handle_idle_physics_frame(delta: float, direction: Vector3) -> void:
 	if not rig.is_idle():
