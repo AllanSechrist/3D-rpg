@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyl2jftnsfseb"]
+[gd_scene load_steps=6 format=3 uid="uid://cyl2jftnsfseb"]
 
 [ext_resource type="PackedScene" uid="uid://dhnqhg7al0gbr" path="res://Player/rig.tscn" id="1_3ih25"]
 [ext_resource type="Script" uid="uid://dp2ugunagnlvd" path="res://Enemies/enemy.gd" id="1_bxkaj"]
 [ext_resource type="PackedScene" uid="uid://c6pdm8b840545" path="res://Player/health_component.tscn" id="3_47qgu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bxkaj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_47qgu"]
 
 [node name="Enemy" type="CharacterBody3D"]
 collision_layer = 9
@@ -19,60 +21,60 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 [node name="Rig" parent="RigPivot" instance=ExtResource("1_3ih25")]
 
 [node name="Skeleton3D" parent="RigPivot/Rig/CharacterRig/GameRig" index="0"]
-bones/0/position = Vector3(4.3546353e-15, 0.9079883, -0.04817357)
+bones/0/position = Vector3(1.3443632e-14, 0.8983632, -0.04817352)
 bones/0/rotation = Quaternion(0.12581974, 1.1826191e-07, 1.4998871e-08, 0.99205315)
 bones/1/rotation = Quaternion(-0.05665772, -0.00072972954, -0.011708177, 0.9983248)
 bones/2/position = Vector3(3.204737e-09, 0.14668903, -1.9557774e-08)
-bones/2/rotation = Quaternion(0.0052113775, -0.00030176726, 0.0032119276, 0.9999812)
-bones/3/rotation = Quaternion(-0.090081714, -0.0002967159, 0.008523964, 0.9958979)
+bones/2/rotation = Quaternion(-0.0010137705, -0.0004026575, 0.0032145134, 0.99999434)
+bones/3/rotation = Quaternion(-0.09573349, -0.00037022633, 0.008520506, 0.9953705)
 bones/4/position = Vector3(3.0293398e-10, 0.09255617, 3.9115548e-08)
-bones/4/rotation = Quaternion(0.27129737, 1.46257495e-08, 9.1479e-08, 0.96249557)
+bones/4/rotation = Quaternion(0.2764145, 1.5129855e-08, 9.187833e-08, 0.9610386)
 bones/5/rotation = Quaternion(-0.09485639, -2.806912e-14, -2.2615541e-08, 0.99549097)
-bones/6/rotation = Quaternion(-0.16345252, -1.1795094e-07, -1.7408302e-08, 0.9865513)
-bones/7/position = Vector3(-2.495909e-08, 0.9079882, -0.04817347)
+bones/6/rotation = Quaternion(-0.15698044, -1.17731304e-07, -1.8713514e-08, 0.9876017)
+bones/7/position = Vector3(-1.3490174e-08, 0.898363, -0.04817345)
 bones/7/rotation = Quaternion(-0.086367704, -0.75110435, -0.38305166, 0.53071135)
-bones/8/position = Vector3(-6.6337975e-08, 0.90798825, -0.048173517)
+bones/8/position = Vector3(-8.5568274e-08, 0.89836305, -0.048173502)
 bones/8/rotation = Quaternion(-0.08636769, 0.7511042, 0.3830516, 0.5307113)
-bones/9/position = Vector3(0.13114367, 0.97419244, -0.035129108)
-bones/9/rotation = Quaternion(0.9940404, 0.020356506, -0.031195635, 0.10245129)
+bones/9/position = Vector3(0.13114367, 0.9645672, -0.035129096)
+bones/9/rotation = Quaternion(0.9930968, 0.020835068, -0.030966219, 0.11120128)
 bones/10/position = Vector3(-2.3612856e-08, 0.2660098, -2.1478938e-08)
 bones/10/rotation = Quaternion(-3.139207e-08, -0.0006950857, 1.2044876e-08, 0.99999976)
 bones/11/position = Vector3(-4.6305953e-08, 0.2660099, 2.421448e-08)
-bones/11/rotation = Quaternion(0.39955577, -0.0006964854, 0.00030369873, 0.91670865)
+bones/11/rotation = Quaternion(0.41930386, -0.00070043, 0.00032364987, 0.9078457)
 bones/12/position = Vector3(3.051513e-08, 0.22602953, 5.0376833e-08)
 bones/12/rotation = Quaternion(-8.192261e-09, -0.0071064373, 4.1610164e-08, 0.9999748)
 bones/13/position = Vector3(-2.9549483e-08, 0.22602952, 2.6839189e-09)
-bones/13/rotation = Quaternion(-0.7427148, 0.011852623, 0.024367593, 0.6690594)
-bones/15/position = Vector3(-0.13114372, 0.9741925, -0.035129108)
-bones/15/rotation = Quaternion(0.97536004, -0.005367564, 0.02760983, 0.21881916)
+bones/13/rotation = Quaternion(-0.75119144, 0.011884216, 0.024402075, 0.6595262)
+bones/15/position = Vector3(-0.1311437, 0.96456736, -0.035129108)
+bones/15/rotation = Quaternion(0.9733143, -0.0057601132, 0.027337484, 0.2277694)
 bones/16/position = Vector3(-1.1004229e-08, 0.2657052, -3.3198894e-08)
 bones/16/rotation = Quaternion(-3.4322706e-08, 0.003143231, 8.33075e-10, 0.9999951)
 bones/17/position = Vector3(1.835448e-08, 0.26570538, 6.9854256e-10)
-bones/17/rotation = Quaternion(0.4253175, 0.0031796363, -0.0014943607, 0.90503746)
+bones/17/rotation = Quaternion(0.44336173, 0.0032863533, -0.0016256396, 0.89633536)
 bones/18/position = Vector3(1.2807033e-08, 0.2257194, -8.287741e-09)
 bones/18/rotation = Quaternion(-2.2901656e-08, -0.007857315, 3.3014885e-08, 0.9999691)
 bones/19/position = Vector3(-1.2774763e-08, 0.22571929, 1.1200427e-08)
-bones/19/rotation = Quaternion(-0.6799308, -0.028148275, -0.0013208628, 0.7327346)
-bones/21/position = Vector3(0.025128614, 1.4376326, 0.046374068)
-bones/21/rotation = Quaternion(-0.47434407, -0.26572555, -0.4139261, 0.7301047)
-bones/22/position = Vector3(0.19097823, 1.4762175, -0.012330061)
-bones/22/rotation = Quaternion(0.026160708, -0.16328907, 0.9753656, -0.14599468)
-bones/23/rotation = Quaternion(2.874524e-08, -0.03520904, 6.3038584e-08, 0.99938)
-bones/24/rotation = Quaternion(0.3427476, -0.03520985, -0.021389337, 0.9385238)
+bones/19/rotation = Quaternion(-0.6877777, -0.028190462, -0.00076426455, 0.72537345)
+bones/21/position = Vector3(0.02512861, 1.4285086, 0.042903487)
+bones/21/rotation = Quaternion(-0.4905937, -0.25912574, -0.40201545, 0.72839224)
+bones/22/position = Vector3(0.18886268, 1.4656204, -0.022321222)
+bones/22/rotation = Quaternion(0.04670582, -0.16017668, 0.97459775, -0.14940286)
+bones/23/rotation = Quaternion(5.7405327e-08, -0.018530773, -2.8608046e-08, 0.9998284)
+bones/24/rotation = Quaternion(0.304905, -0.018531358, -0.01873752, 0.95201814)
 bones/25/rotation = Quaternion(1.499429e-07, -1.2060627e-07, 9.9185876e-08, 1)
 bones/26/rotation = Quaternion(-0.008248833, -0.00027077025, -0.032866735, 0.9994257)
-bones/46/position = Vector3(-0.011363528, 1.4376326, 0.04637405)
-bones/46/rotation = Quaternion(-0.47800267, 0.25686035, 0.40833482, 0.7340293)
-bones/47/position = Vector3(-0.17575304, 1.4765583, -0.016080432)
-bones/47/rotation = Quaternion(-0.022141093, -0.14582787, 0.97586197, 0.16105084)
-bones/48/rotation = Quaternion(3.5821614e-08, 0.04948937, -2.1072886e-09, 0.9987747)
-bones/49/rotation = Quaternion(0.3821192, 0.049490016, 0.028314775, 0.92235243)
+bones/46/position = Vector3(-0.011363526, 1.4285086, 0.042903475)
+bones/46/rotation = Quaternion(-0.50733227, 0.22486833, 0.37867466, 0.7407117)
+bones/47/position = Vector3(-0.1683033, 1.4661096, -0.03707453)
+bones/47/rotation = Quaternion(-0.06896261, -0.13792838, 0.97367394, 0.16786577)
+bones/48/rotation = Quaternion(1.7226151e-07, 0.01784641, 1.02443934e-07, 0.99984086)
+bones/49/rotation = Quaternion(0.33865207, 0.017846704, 0.028995823, 0.9402955)
 bones/50/rotation = Quaternion(-8.731149e-08, 2.7474018e-08, -1.2805685e-07, 1)
 bones/51/rotation = Quaternion(-0.008248763, 0.00027083192, 0.032866996, 0.9994257)
-bones/71/position = Vector3(0.12719111, 1.358214, -0.024784507)
-bones/71/rotation = Quaternion(2.013576e-08, 0.60095716, 0.7992813, -4.595547e-08)
-bones/72/position = Vector3(-0.113425955, 1.358214, -0.024784531)
-bones/72/rotation = Quaternion(2.01358e-08, 0.60095716, 0.7992813, -4.5955385e-08)
+bones/71/position = Vector3(0.12719111, 1.3472221, -0.02615357)
+bones/71/rotation = Quaternion(1.9421199e-08, 0.6114043, 0.7913185, -4.63573e-08)
+bones/72/position = Vector3(-0.113425955, 1.3472221, -0.026153594)
+bones/72/rotation = Quaternion(1.9421245e-08, 0.6114043, 0.7913185, -4.6357233e-08)
 
 [node name="Knight_02" parent="RigPivot/Rig/CharacterRig/GameRig/Skeleton3D" index="1"]
 visible = false
@@ -81,12 +83,17 @@ visible = false
 visible = true
 
 [node name="RightHandBone" parent="RigPivot/Rig" index="2"]
-transform = Transform3D(-0.9623429, -0.27080265, -0.023712633, 0.225, -0.8424434, 0.48955572, -0.15254949, 0.46578503, 0.8716494, -0.3495698, 1.0071812, 0.01963804)
+transform = Transform3D(-0.96234393, -0.27079827, -0.02371756, 0.23896416, -0.88433987, 0.401048, -0.12957753, 0.3802786, 0.9157497, -0.34211895, 0.9859263, -0.022556353)
 
 [node name="LeftHandBone" parent="RigPivot/Rig" index="3"]
-transform = Transform3D(-0.9705132, 0.23910843, 0.030520944, -0.21122059, -0.90458477, 0.37028697, 0.11614755, 0.35292172, 0.92841566, 0.3477888, 0.99072945, -0.014409501)
+transform = Transform3D(-0.9705135, 0.23910744, 0.030521851, -0.22025265, -0.93109924, 0.29076314, 0.097942546, 0.27546704, 0.95630795, 0.34567305, 0.9731978, -0.04369912)
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_47qgu")]
+
+[node name="PlayerDetector" type="ShapeCast3D" parent="."]
+shape = SubResource("CapsuleShape3D_47qgu")
+target_position = Vector3(0, 0, 1)
+collision_mask = 4
 
 [connection signal="defeat" from="HealthComponent" to="." method="death"]
 
