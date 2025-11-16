@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://chfo517ugbr4v"]
+[gd_scene load_steps=11 format=3 uid="uid://chfo517ugbr4v"]
 
 [ext_resource type="PackedScene" uid="uid://j3m1lwvl5jua" path="res://Player/player.tscn" id="1_s41d2"]
 [ext_resource type="PackedScene" uid="uid://b24fiof57q0oo" path="res://Assets/3D_Assets/Environment/Rock_Cliff_Env_03.glb" id="2_gtnvv"]
 [ext_resource type="PackedScene" uid="uid://s86voqclaqv3" path="res://Assets/3D_Assets/Environment/Topiary_Tree_Vege_01.glb" id="3_uhyyw"]
 [ext_resource type="PackedScene" uid="uid://dxnr5yie1umyh" path="res://Assets/3D_Assets/Environment/Tree_Group_Vege.glb" id="4_t80w2"]
 [ext_resource type="PackedScene" uid="uid://f2bjinaa8eby" path="res://Assets/3D_Assets/Environment/Bush_Vege_2.glb" id="5_8a2b0"]
+[ext_resource type="PackedScene" uid="uid://cyl2jftnsfseb" path="res://Enemies/enemy.tscn" id="6_t80w2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54b6e"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -139,3 +140,17 @@ transform = Transform3D(-0.99906033, 0, 0.043340415, 0, 1, 0, -0.043340415, 0, -
 
 [node name="Bush_Vege_25" parent="Nature" instance=ExtResource("5_8a2b0")]
 transform = Transform3D(-0.99906033, 0, 0.043340415, 0, 1, 0, -0.043340415, 0, -0.99906033, 13.31708, 0, -8.737827)
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("6_t80w2")]
+transform = Transform3D(0.8943495, 0, -0.44736892, 0, 1, 0, 0.44736892, 0, 0.8943495, 1.5950632, 0.9999999, -4.9885535)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("6_t80w2")]
+transform = Transform3D(0.7932258, 0, -0.60892755, 0, 1, 0, 0.60892755, 0, 0.7932258, 3.2216132, 0.9999999, -1.8755679)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("6_t80w2")]
+transform = Transform3D(0.8758775, 0, 0.48253348, 0, 1, 0, -0.48253348, 0, 0.8758775, -2.8925138, 0.9999999, -2.4929233)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("6_t80w2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9165671, 0.9999999, -4.782893)
