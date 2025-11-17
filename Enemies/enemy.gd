@@ -2,10 +2,13 @@ extends CharacterBody3D
 class_name Enemy
 
 @export var max_health: float = 20.0
+@export var damage: float = 20.0
 @onready var rig: Node3D = $RigPivot/Rig
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
-@onready var player_detector: ShapeCast3D = $PlayerDetector
+@onready var player_detector: ShapeCast3D = $RigPivot/Rig/PlayerDetector
+@onready var area_attack: ShapeCast3D = $RigPivot/Rig/AreaAttack
+
 
 func _ready() -> void:
 	rig.set_active_mesh(
@@ -13,7 +16,7 @@ func _ready() -> void:
 	)
 	health_component.update_max_health(max_health)
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if rig.is_idle():
 		check_for_attacks()
 		
@@ -30,4 +33,4 @@ func death() -> void:
 
 
 func _on_rig_heavy_attack() -> void:
-	print("heavy attack signal")
+	area_attack.deal_damage(damage)
