@@ -16,15 +16,18 @@ var _attack_direction := Vector3.ZERO
 @export var animation_decay := 20.0
 @export var attack_move_speed: float = 3.0
 
+@onready var health_component: HealthComponent = $HealthComponent
 @onready var horizontal_pivot: Node3D = $HorizontalPivot
 @onready var vertical_pivot: Node3D = $HorizontalPivot/VerticalPivot
 @onready var rig_pivot: Node3D = $RigPivot
 @onready var rig: Node3D = $RigPivot/Rig
 @onready var attack_cast: RayCast3D = %AttackCast
+@onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	health_component.update_max_health(30.0)
 
 func _physics_process(delta: float) -> void:
 	frame_camera_rotation()
@@ -97,3 +100,9 @@ func handle_idle_physics_frame(delta: float, direction: Vector3) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+
+
+func _on_health_component_defeat() -> void:
+	rig.travel("Defeat")
+	collision_shape_3d.disabled = true
+	set_physics_process(false)
