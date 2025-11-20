@@ -16,6 +16,8 @@ var _attack_direction := Vector3.ZERO
 @export var max_boundary: float = 10
 @export var animation_decay := 20.0
 @export var attack_move_speed: float = 3.0
+@export_category("RPG Stats")
+@export var stats: CharacterStats
 
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var horizontal_pivot: Node3D = $HorizontalPivot
