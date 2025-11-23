@@ -89,3 +89,4 @@ font_size = 64
 libraries = {
 &"": SubResource("AnimationLibrary_txons")
 }
+autoplay = "Dissapear"
