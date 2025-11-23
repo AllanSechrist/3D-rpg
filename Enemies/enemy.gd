@@ -4,6 +4,7 @@ class_name Enemy
 @export var max_health: float = 20.0
 @export var damage: float = 20.0
 @export var xp_value := 30
+@export var crit_rate := 0.05
 @onready var rig: Node3D = $RigPivot/Rig
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
@@ -35,4 +36,4 @@ func death() -> void:
 	set_physics_process(false)
 
 func _on_rig_heavy_attack() -> void:
-	area_attack.deal_damage(damage)
+	area_attack.deal_damage(damage, crit_rate)

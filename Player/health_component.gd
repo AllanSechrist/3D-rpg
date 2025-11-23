@@ -17,5 +17,9 @@ func update_max_health(max_hp_in: float) -> void:
 	max_health = max_hp_in
 	current_health = max_health
 	
-func take_damage(damage_in: float) -> void:
-	current_health -= damage_in
+func take_damage(damage_in: float, is_critical: bool) -> void:
+	var damage = damage_in
+	if is_critical:
+		damage *= 2.0
+	current_health -= damage
+	
