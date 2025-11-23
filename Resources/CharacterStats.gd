@@ -11,14 +11,18 @@ class Ability:
 		set(value):
 			ability_score = clamp(value, 0, 100)
 			
-	func _init(min: float, max: float) -> void:
-		min_modifier = min
-		max_modifier = max
+	func _init(min_value: float, max_value: float) -> void:
+		min_modifier = min_value
+		max_modifier = max_value
 		
 	func percentile_lerp(min_bound: float, max_bound: float) -> float:
+		# this function also handles modifiers that may exsist outside of the
+		# Ability inner class
 		return lerp(min_bound, max_bound, ability_score/100.0)
 		
 	func get_modifier() -> float:
+		# This function returns only the modifiers that are apart of
+		# the Abliity inner class. 
 		return percentile_lerp(min_modifier, max_modifier)
 		
 	func increase() -> void:
@@ -34,6 +38,9 @@ var xp := 0:
 			xp -= boundary
 			level_up()
 			boundary = percentage_level_up_boundary()
+
+const MIN_DASH_COOLDOWN := 1.5
+const MAX_DASH_COOLDOWN := 0.5
 
 # Bonus damage.
 var strength := Ability.new(2.0, 12.0)
@@ -55,6 +62,9 @@ func get_crit_chance() -> float:
 	
 func get_max_hp() -> int:
 	return 20 + int(level * endurance.get_modifier())
+	
+func get_dash_cooldown() -> float:
+	return agility.percentile_lerp(MIN_DASH_COOLDOWN, MAX_DASH_COOLDOWN)
 	
 func level_up() -> void:
 	level += 1
