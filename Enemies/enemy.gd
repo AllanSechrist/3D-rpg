@@ -3,12 +3,14 @@ class_name Enemy
 
 @export var max_health: float = 20.0
 @export var damage: float = 20.0
+@export var xp_value := 30
 @onready var rig: Node3D = $RigPivot/Rig
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
 @onready var player_detector: ShapeCast3D = $RigPivot/Rig/PlayerDetector
 @onready var area_attack: ShapeCast3D = $RigPivot/Rig/AreaAttack
 
+@onready var player: Player = get_tree().get_first_node_in_group("Player")
 
 func _ready() -> void:
 	rig.set_active_mesh(
@@ -27,10 +29,10 @@ func check_for_attacks() -> void:
 			rig.travel("Overhead")
 
 func death() -> void:
+	player.stats.xp += xp_value
 	rig.travel("Defeat")
 	collision_shape_3d.disabled = true
 	set_physics_process(false)
-
 
 func _on_rig_heavy_attack() -> void:
 	area_attack.deal_damage(damage)
