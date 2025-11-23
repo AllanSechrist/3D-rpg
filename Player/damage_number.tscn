@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkqqxwh4uqm7m"]
+[gd_scene load_steps=6 format=3 uid="uid://bkqqxwh4uqm7m"]
 
 [ext_resource type="Script" uid="uid://dnpsa4wseyyd3" path="res://Player/damage_number.gd" id="1_ur3r0"]
+[ext_resource type="FontFile" uid="uid://b7al88234jnfg" path="res://Assets/Fonts/Allerta,Libre_Caslon_Text,Orbitron,Roboto,Space_Grotesk/Libre_Caslon_Text/LibreCaslonText-Bold.ttf" id="2_txons"]
 
 [sub_resource type="Animation" id="Animation_yylh2"]
 resource_name = "Dissapear"
@@ -83,6 +84,7 @@ script = ExtResource("1_ur3r0")
 billboard = 1
 no_depth_test = true
 text = "25"
+font = ExtResource("2_txons")
 font_size = 64
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
