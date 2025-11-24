@@ -3,7 +3,7 @@ class_name Enemy
 
 @export var max_health: float = 20.0
 @export var damage: float = 20.0
-@export var xp_value := 30
+@export var xp_value := 25
 @export var crit_rate := 0.05
 @onready var rig: Node3D = $RigPivot/Rig
 @onready var health_component: HealthComponent = $HealthComponent

@@ -29,4 +29,6 @@ func take_damage(damage_in: float, is_critical: bool) -> void:
 		VfxManager.spawn_damage_number(damage, Color.WHITE, body.global_position)
 	current_health -= damage
 	
+func get_health_string() -> String:
+	return "%s/%s" % [int(current_health), int(max_health)]
 	
