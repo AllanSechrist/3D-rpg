@@ -4,8 +4,13 @@ extends Control
 @onready var health_bar: TextureProgressBar = %HealthBar
 @onready var xp_bar: TextureProgressBar = %XPBar
 @onready var health_label: Label = %HealthLabel
+@onready var inventory: Control = $Inventory
 
 @export var player: Player
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("open_menu"):
+		toggle_menu()
 
 func update_stats_display() -> void:
 	level_label.text = str(player.stats.level)
@@ -16,3 +21,20 @@ func update_health() -> void:
 	health_bar.max_value = player.health_component.max_health
 	health_bar.value = player.health_component.current_health
 	health_label.text = player.health_component.get_health_string()
+
+#func open_menu() -> void:
+	#inventory.visible = true
+	
+#func close_menu() -> void:
+#	inventory.visible = false
+	
+func toggle_menu() -> void:
+	inventory.visible = !inventory.visible
+	get_tree().paused = !get_tree().paused
+	
+	# make mouse usable when the menu is open
+	if inventory.visible:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
