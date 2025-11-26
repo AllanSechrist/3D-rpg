@@ -59,8 +59,9 @@ data = ExtResource("1_eabcg")
 environment = SubResource("Environment_gtnvv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0.17172098, 0, 0)
 shadow_enabled = true
+directional_shadow_blend_splits = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.047671318, -0.029078484, -0.09323311)
@@ -367,16 +368,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.003624, 1.6486081, 21.961
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Enemies" type="Node3D" parent="."]
-transform = Transform3D(0.7984254, 0, 0.60209376, 0, 1, 0, -0.60209376, 0, 0.7984254, -14.442977, 0, -12.880767)
+transform = Transform3D(0.7984254, 0, 0.60209376, 0, 1, 0, -0.60209376, 0, 0.7984254, -6.193242, 9.536743e-07, -1.7691183)
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("6_t80w2")]
-transform = Transform3D(0.8943495, 0, -0.44736892, 0, 1, 0, 0.44736892, 0, 0.8943495, 1.5950632, 0.9999999, -4.9885535)
+transform = Transform3D(0.8943499, 0, -0.44736904, 0, 1, 0, 0.44736904, 0, 0.8943499, 7.762075, 0.9709215, 0.32484436)
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("6_t80w2")]
-transform = Transform3D(0.7932258, 0, -0.60892755, 0, 1, 0, 0.60892755, 0, 0.7932258, 3.2216132, 0.9999999, -1.8755679)
+transform = Transform3D(0.7932261, 0, -0.60892767, 0, 1, 0, 0.60892767, 0, 0.7932261, 3.221614, 0.9709215, -1.8755722)
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("6_t80w2")]
-transform = Transform3D(0.8758775, 0, 0.48253348, 0, 1, 0, -0.48253348, 0, 0.8758775, -2.8925138, 0.9999999, -2.4929233)
+transform = Transform3D(0.87587774, 0, 0.4825337, 0, 1, 0, -0.4825337, 0, 0.87587774, 5.00544, 0.9709215, 2.186205)
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource("6_t80w2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9165671, 0.9999999, -4.782893)
+transform = Transform3D(1.0000002, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000002, 5.9801064, 0.9709214, -1.0236969)
