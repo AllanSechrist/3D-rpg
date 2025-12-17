@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvjxml3n5nc7l"]
+[gd_scene load_steps=4 format=3 uid="uid://bvjxml3n5nc7l"]
 
 [ext_resource type="PackedScene" uid="uid://3maqy1fs0kuo" path="res://Assets/3D_Assets/Environment/Chest_Prop.glb" id="1_0x1sp"]
+[ext_resource type="Script" uid="uid://bunde1tnja2be" path="res://Interactable/chest.gd" id="1_bbitu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ou2pm"]
 size = Vector3(0.5, 0.8, 1)
 
 [node name="Chest" type="StaticBody3D"]
+collision_layer = 3
+script = ExtResource("1_bbitu")
 
 [node name="Chest_Prop2" parent="." instance=ExtResource("1_0x1sp")]
 

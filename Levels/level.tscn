@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://chfo517ugbr4v"]
+[gd_scene load_steps=30 format=3 uid="uid://chfo517ugbr4v"]
 
 [ext_resource type="VoxelGIData" uid="uid://baah5vyyrx328" path="res://Levels/GIData/level.VoxelGI_data.res" id="1_eabcg"]
 [ext_resource type="PackedScene" uid="uid://j3m1lwvl5jua" path="res://Player/player.tscn" id="1_s41d2"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://hd8nbofui1sy" path="res://Assets/3D_Assets/Environment/Fire_Pit_Env.glb" id="18_1sae0"]
 [ext_resource type="PackedScene" uid="uid://dpipt0e5m3wpy" path="res://Assets/3D_Assets/Environment/Barrel_Wooden_Prop.glb" id="19_twn60"]
 [ext_resource type="PackedScene" uid="uid://bvjxml3n5nc7l" path="res://Interactable/chest.tscn" id="20_wjjle"]
+[ext_resource type="PackedScene" uid="uid://dvwh8ja0mv1a2" path="res://UserInterface/currency_icon.tscn" id="21_twn60"]
+[ext_resource type="PackedScene" uid="uid://drv4cey5a75hy" path="res://UserInterface/armor_icon.tscn" id="22_r2ueb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54b6e"]
 sky_top_color = Color(0.13200001, 0.31313336, 0.55, 1)
@@ -369,6 +371,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.003624, 1.6486081, 21.961
 
 [node name="Chest" parent="NavigationRegion3D/Interactable" instance=ExtResource("20_wjjle")]
 transform = Transform3D(0.9062783, -0.009810775, -0.42256764, 0, 0.9997306, -0.023210796, 0.4226815, 0.02103544, 0.9060342, 5.5615935, -0.0024163127, 1.2545152)
+
+[node name="CurrencyIcon" parent="NavigationRegion3D/Interactable/Chest" instance=ExtResource("21_twn60")]
+visible = false
+value = 15
+
+[node name="ArmorIcon" parent="NavigationRegion3D/Interactable/Chest" instance=ExtResource("22_r2ueb")]
+visible = false
+power = 10
+armor = 0
 
 [node name="Player" parent="." instance=ExtResource("1_s41d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
