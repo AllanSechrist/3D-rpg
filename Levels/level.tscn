@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://chfo517ugbr4v"]
+[gd_scene load_steps=35 format=3 uid="uid://chfo517ugbr4v"]
 
 [ext_resource type="VoxelGIData" uid="uid://baah5vyyrx328" path="res://Levels/GIData/level.VoxelGI_data.res" id="1_eabcg"]
 [ext_resource type="PackedScene" uid="uid://j3m1lwvl5jua" path="res://Player/player.tscn" id="1_s41d2"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://drv4cey5a75hy" path="res://UserInterface/armor_icon.tscn" id="22_r2ueb"]
 [ext_resource type="PackedScene" uid="uid://cfe8011hh7q3n" path="res://UserInterface/weapon_icon.tscn" id="23_o8jhj"]
 [ext_resource type="PackedScene" uid="uid://cvkhlrrh1rsjj" path="res://Assets/3D_Assets/Character/Gear/Broken_Sword.glb" id="24_3kmy4"]
+[ext_resource type="PackedScene" uid="uid://dry3c81yttw31" path="res://Assets/3D_Assets/Character/Gear/Tall_Shield.glb" id="24_gaktt"]
 [ext_resource type="PackedScene" uid="uid://1fp1pj0bhwp4" path="res://UserInterface/shield_icon.tscn" id="24_nflnv"]
 [ext_resource type="PackedScene" uid="uid://lserhyx2701q" path="res://Assets/3D_Assets/Character/Gear/Battleaxe.glb" id="25_gaktt"]
 
@@ -382,8 +383,25 @@ value = 15
 
 [node name="ArmorIcon" parent="NavigationRegion3D/Interactable/Chest" instance=ExtResource("22_r2ueb")]
 visible = false
-power = 10
+protection = 25
 armor = 0
+
+[node name="ArmorIcon2" parent="NavigationRegion3D/Interactable/Chest" instance=ExtResource("22_r2ueb")]
+visible = false
+protection = 45
+
+[node name="ShieldIcon" parent="NavigationRegion3D/Interactable/Chest" instance=ExtResource("24_nflnv")]
+visible = false
+offset_right = 128.0
+offset_bottom = 128.0
+protection = 15
+
+[node name="ShieldIcon2" parent="NavigationRegion3D/Interactable/Chest" instance=ExtResource("24_nflnv")]
+visible = false
+offset_right = 128.0
+offset_bottom = 128.0
+protection = 30
+item_model = ExtResource("24_gaktt")
 
 [node name="Chest2" parent="NavigationRegion3D/Interactable" instance=ExtResource("20_wjjle")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0, 3)
@@ -401,9 +419,6 @@ item_model = ExtResource("24_3kmy4")
 visible = false
 power = 12
 item_model = ExtResource("25_gaktt")
-
-[node name="ShieldIcon" parent="NavigationRegion3D/Interactable/Chest2" instance=ExtResource("24_nflnv")]
-visible = false
 
 [node name="Player" parent="." instance=ExtResource("1_s41d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
