@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://chfo517ugbr4v"]
+[gd_scene load_steps=32 format=3 uid="uid://chfo517ugbr4v"]
 
 [ext_resource type="VoxelGIData" uid="uid://baah5vyyrx328" path="res://Levels/GIData/level.VoxelGI_data.res" id="1_eabcg"]
 [ext_resource type="PackedScene" uid="uid://j3m1lwvl5jua" path="res://Player/player.tscn" id="1_s41d2"]
@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://bvjxml3n5nc7l" path="res://Interactable/chest.tscn" id="20_wjjle"]
 [ext_resource type="PackedScene" uid="uid://dvwh8ja0mv1a2" path="res://UserInterface/currency_icon.tscn" id="21_twn60"]
 [ext_resource type="PackedScene" uid="uid://drv4cey5a75hy" path="res://UserInterface/armor_icon.tscn" id="22_r2ueb"]
+[ext_resource type="PackedScene" uid="uid://cfe8011hh7q3n" path="res://UserInterface/weapon_icon.tscn" id="23_o8jhj"]
+[ext_resource type="PackedScene" uid="uid://1fp1pj0bhwp4" path="res://UserInterface/shield_icon.tscn" id="24_nflnv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_54b6e"]
 sky_top_color = Color(0.13200001, 0.31313336, 0.55, 1)
@@ -381,6 +383,15 @@ visible = false
 power = 10
 armor = 0
 
+[node name="Chest2" parent="NavigationRegion3D/Interactable" instance=ExtResource("20_wjjle")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0, 3)
+
+[node name="WeaponIcon" parent="NavigationRegion3D/Interactable/Chest2" instance=ExtResource("23_o8jhj")]
+visible = false
+
+[node name="ShieldIcon" parent="NavigationRegion3D/Interactable/Chest2" instance=ExtResource("24_nflnv")]
+visible = false
+
 [node name="Player" parent="." instance=ExtResource("1_s41d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
@@ -389,12 +400,16 @@ transform = Transform3D(0.7984254, 0, 0.60209376, 0, 1, 0, -0.60209376, 0, 0.798
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("6_t80w2")]
 transform = Transform3D(1.0000002, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000002, -3.231584, 0.97092056, -6.288189)
+speed = 0.0
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("6_t80w2")]
 transform = Transform3D(1.0000002, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000002, 5.91469, 0.97092056, -0.6245136)
+speed = 0.0
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("6_t80w2")]
 transform = Transform3D(1.0000002, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000002, 7.948048, 0.97092056, -9.838051)
+speed = 0.0
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource("6_t80w2")]
 transform = Transform3D(1.0000002, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000002, 19.117348, 0.9709203, -2.610301)
+speed = 0.0
