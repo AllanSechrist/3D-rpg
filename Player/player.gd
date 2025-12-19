@@ -39,6 +39,9 @@ func _ready() -> void:
 	)
 	stats.update_stats.connect(user_interface.update_stats_display)
 	user_interface.update_stats_display()
+	user_interface.inventory.armor_changed.connect(
+		health_component.update_armor_value
+	)
 
 func _physics_process(delta: float) -> void:
 	frame_camera_rotation()

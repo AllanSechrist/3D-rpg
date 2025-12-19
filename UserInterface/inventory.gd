@@ -4,6 +4,8 @@ class_name Inventory
 const MIN_ARMOR_RATING := 0.0
 const MAX_ARMOR_RATING := 80.0
 
+signal armor_changed(protection: float)
+
 @onready var level_label: Label = %LevelLabel
 @onready var strength_value: Label = %StrengthValue
 @onready var agility_value: Label = %AgilityValue
@@ -37,6 +39,7 @@ func update_stats() -> void:
 func update_gear_stats() -> void:
 	attack_value.text = str(get_weapon_value())
 	armor_value.text = str(get_armor_value())
+	armor_changed.emit(get_armor_value())
 
 func get_weapon_value() -> int:
 	var damage = 0
