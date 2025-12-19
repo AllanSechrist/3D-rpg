@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvwh8ja0mv1a2"]
 
 [ext_resource type="PackedScene" uid="uid://brc745m2sw84x" path="res://UserInterface/item_icon.tscn" id="1_jvp7y"]
-[ext_resource type="Script" uid="uid://2hu4mw0c0uqq" path="res://currency_icon.gd" id="2_otw35"]
+[ext_resource type="Script" uid="uid://2hu4mw0c0uqq" path="res://UserInterface/currency_icon.gd" id="2_otw35"]
 [ext_resource type="Texture2D" uid="uid://bel4rl0sgioci" path="res://Assets/UIAssets/Icons/star_icon.png" id="3_otw35"]
 
 [node name="CurrencyIcon" instance=ExtResource("1_jvp7y")]

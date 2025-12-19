@@ -28,6 +28,7 @@ signal armor_changed(protection: float)
 
 func _ready() -> void:
 	update_stats()
+	load_items_from_persistent_data()
 
 func update_stats() -> void:
 	strength_value.text = str(player.stats.strength.ability_score)
@@ -70,12 +71,13 @@ func equip_item(item: ItemIcon, item_slot: CenterContainer) -> void:
 func interact(item: ItemIcon) -> void:
 	if item is WeaponIcon:
 		equip_item(item, weapon_slot)
-		get_tree().call_group("Rig", "replace_weapon", item.item_model)
+		get_tree().call_group("PlayerRig", "replace_weapon", item.item_model)
 	if item is ArmorIcon:
 		equip_item(item, armor_slot)
+		get_tree().call_group("PlayerRig", "replace_armor", item.armor)
 	if item is ShieldIcon:
 		equip_item(item, shield_slot)
-		get_tree().call_group("Rig", "replace_shield", item.item_model)
+		get_tree().call_group("PlayerRig", "replace_shield", item.item_model)
 	update_gear_stats()
 	
 func get_weapon() -> WeaponIcon:
@@ -101,3 +103,11 @@ func get_armor_value() -> float:
 		armor += get_shield().protection
 	armor = clampf(armor, MIN_ARMOR_RATING, MAX_ARMOR_RATING)
 	return armor
+	
+func load_items_from_persistent_data() -> void:
+	for item in PersistentData.get_inventory():
+		add_item(item)
+	for item in PersistentData.get_equipped_items():
+		add_item(item)
+		interact(item)
+	gold = PersistentData.gold_store
